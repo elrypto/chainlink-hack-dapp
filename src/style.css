@@ -11,6 +11,46 @@ body{
   padding: 30px;
 }
 
+.boxHead {
+  margin: 1em;
+  color: grey;
+}
+
+.boxBodybuttons {
+  border-top: 1px solid lightgray;
+  padding: 1em
+}
+
+.boxBodyStatus {
+  background-color: white;
+  padding: 1em;
+}
+
+.boxBody {
+  
+}
+
+.boxHeadLogo {
+  width: 60%;
+}
+
+.flexCol{
+  display: flex;
+  flex-direction: column;
+}
+
+.fullFlexRow {
+  width: 100%;
+  background-color: whitesmoke;
+}
+.seeMe {
+  border: 1px solid lightgray;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
 
 .logo-text {
   font-size: 1.1rem;

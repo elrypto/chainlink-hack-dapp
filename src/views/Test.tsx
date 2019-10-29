@@ -1,5 +1,5 @@
 import React from 'react'
-import Web3Provider from 'web3-react';
+import StatusAndButtons from '../components/StatusAndButtons'
 
 
 
@@ -11,10 +11,10 @@ export default function Test() {
       <div className="jumbotron">
         <div className="narrow">
           <div className="col-12">
-            <h3 className="heading text-center">==--* test  +___=-`</h3>
+            <h3 className="heading text-center">demo</h3>
             <div className="heading-underline"></div>
            
-              <p> Test something here </p>
+            <StatusAndButtons />
 
           </div>
         </div>
@@ -22,3 +22,11 @@ export default function Test() {
     </div>
   )
 }
+
+
+/*
+
+import Logo from "./../img/logo_loom_justsym.svg";
+<img className="logo" src={Logo}/>
+
+*/

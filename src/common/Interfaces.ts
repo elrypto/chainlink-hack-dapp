@@ -1,3 +1,4 @@
+import Web3 from "web3";
 
 /**
 |--------------------------------------------------
@@ -8,13 +9,7 @@ export type Dispatch = React.Dispatch<IAction>;
 
 
 export interface IAppState {
- /* users: Array<IUser>;
-  currentUser: IUser |any;
-  projects: Array<IProject>;
-  currentProject: IProject |any;
-  tasks: Array<ITask>;
-  currentTask: ITask |any;
-  eventTypes: Array<IEventType>;*/
+  ethWeb3: Web3 | null;
 }
 
 export interface IAction {

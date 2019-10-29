@@ -6,11 +6,12 @@ import {
 
 
 export enum ActionType {
-  /*SET_USERS = "kodeart/USERS",*/
+  SET_ETHWEB3 = "plasmalink/ETHWEB3",
 }
 
 
 const initialState: IAppState = {
+  ethWeb3: null
     /*users: [],*/
 };
 
@@ -19,10 +20,10 @@ export const Store = React.createContext<IAppState | any>(initialState);
 
 function reducer(state: IAppState, action: IAction | any): IAppState {
   switch (action.type) {
-    /*case ActionType.SET_USERS:
+    case ActionType.SET_ETHWEB3:
       return {
-        ...state, users: action.payload
-      }*/
+        ...state, ethWeb3: action.payload
+      }
     default:
       return state;
   }

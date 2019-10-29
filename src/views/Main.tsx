@@ -18,10 +18,10 @@ export default function Main() {
         </div>
       </div>
       <div className="caption text-center">
-        <h1>(k)ode.art</h1>
-        <h3>Pulic works of art, expressed in code</h3>
-        <a className="btn btn-outline-light btn-lg" href="#overview">See Rankings</a>
-        <a className="btn btn-outline-light btn-lg" href="#overview">Submit Code</a>
+        <h1>plasmalink</h1>
+        <h3>chainlink hack - unified access to plasma chains</h3>
+        <a className="btn btn-outline-light btn-lg" href="#overview">Demo</a>
+        <a className="btn btn-outline-light btn-lg" href="#overview">Operations</a>
       </div>
       <span><a href="" 
         onClick={() => {

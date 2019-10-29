@@ -7,10 +7,10 @@ export default function Footer() {
            <footer>
              <div className="row justify-content-center">
                 <div className="col-md-5 text-center">
-                  <h3>(k)ode.art)</h3>
-                  <p>public works of art, expressed as code
-                  </p>
-                  <a href="http://github.com/lrypto/kode.art.template/" target="_blank"><i className="fab fa-github"></i></a>     
+                  <h3>plasmalink</h3>
+                  <p>chainlink hack (oct 2019)</p>
+                  <p>Using chainlink to provide unified access to plasma chain(s)</p>
+                  <a href="http://github.com/lrypto/" target="_blank"><i className="fab fa-github"></i></a>     
                 </div>
 
              </div>

@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <React.Fragment>
        <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <a className="navbar-brand" href="/"><p>(k)ode.art</p></a>
+          <a className="navbar-brand" href="/"><p>plasma link</p></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive">
               <span className="navbar-toggler-icon"></span>

@@ -17,7 +17,7 @@
     "chart.js": "^2.8.0",
     "date-fns": "^2.5.0",
     "dotenv": "^7.0.0",
-    "ethers": "^4.0.37",
+    "ethers": "^4.0.38",
     "js-sha256": "^0.9.0",
     "lodash": "^4.17.15",
     "loom-js": "^1.55.0",
@@ -32,7 +32,7 @@
     "tslib": "^1.10.0",
     "typeface-roboto": "^0.0.54",
     "typescript": "3.4.3",
-    "web3": "1.0.0-beta.34",
+    "web3": "^1.2.2",
     "web3-react": "^5.0.4"
   },
   "scripts": {

@@ -9,7 +9,10 @@ export type Dispatch = React.Dispatch<IAction>;
 
 
 export interface IAppState {
-  ethWeb3: Web3 | null;
+  ethWeb3: Web3| null;
+  injectedProvider: any| null;
+  selectedEthAddr: string;
+  ethersWeb3: any;
 }
 
 export interface IAction {
@@ -17,7 +20,7 @@ export interface IAction {
   payload: any;
 }
 
-/*
+
 export interface ILoomConnectionInfo {
   networkAlias: string;  // LOCAL_DEV | TEST | EXTDEV | PROD
   writeUrl: string;    // 'ws://127.0.0.1:46658/websocket';
@@ -36,5 +39,5 @@ export interface ILoomObject {
   currentNetwork: string;
 
   connectionInfo: ILoomConnectionInfo|any;
-}*/
+}
 

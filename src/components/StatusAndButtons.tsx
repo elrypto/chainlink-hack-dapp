@@ -3,66 +3,62 @@ import EthLogo from "./../img/ethereum.png";
 import LoomLogo from "./../img/loom.png";
 import ChainLinkLogo from "./../img/chainlink.png";
 import { Button } from 'antd';
-import { Store } from '../common/Store';
+import { Store, ActionType } from '../common/Store';
 import Web3 from 'web3';
 
 
+
+
 export default function StatusAndButtons() {
+  
   const { state, dispatch } = React.useContext(Store);  
   //const [w3, setw3] = React.useState<Web3| null>(null);
   
+  
 
   React.useEffect(() => {
-    const fetchBalance = async() => {
-     //const ethersWeb3 = new ethers.providers.Web3Provider(state.injectedProvider);
-      //let b = await ethersWeb3.getBalance(state.selectedEthAddr);
-      
-     // ethersWeb3.getBalance(state.selectedEthAddr).then((balance) => {
-
-        // balance is a BigNumber (in wei); format is as a sting (in ether)
-      //  let etherString = ethers.utils.formatEther(balance);
-    
-     //   console.log("Balance: " + etherString);
-   
-      
-      //console.log("getting balance for addres:", state.selectedEthAddr);
-      //console.log("balance for address:", b);
-
-      let w3 = new Web3(state.injectedProvider);
-      let b = await w3.eth.getBalance(state.injectedProvider.selectedAddress);
-      console.log("balance(w3):", b);
-    }
-
-     /* if (!w3){
-        let tempW3 = new Web3(state.injectedProvider);
-        setw3(tempW3);
-      }
-    }*/
     if (state.injectedProvider){
-      console.log("have injected web3 now");
-      console.log('eth address:', state.injectedProvider.selectedAddress);
-     fetchBalance();
+      console.log('have injected provider');
+      
+      if (state.injectedProvider.selectedAddress){
+        console.log('setting selected addr', state.injectedProvider.selectedAddress);
+
+        dispatch({
+          type: ActionType.SET_SELECTED_ETH_ADDR,
+          payload: state.injectedProvider.selectedAddress
+        });
+
+      }else{
+        console.warn('dont have selected address, yet');
+      }
     }
   }, [state.injectedProvider]);
 
-/*
+
 
   React.useEffect(() => {
     const fetchBalance = async() => {
-      //let b = await state.etherWeb3.getBalance(state.selectedEthAddr);
-      console.log("getting balance for addres:", state.selectedEthAddr);
-      let b = await state.ethersWeb3.getBalance(state.selectedEthAddr);
-      console.log("balance for address:", b);
+      if (state.injectedProvider){
+        let w3: Web3 = new Web3(state.injectedProvider);
+        let b = await w3.eth.getBalance(state.selectedEthAddr);
+        let converted = w3.utils.fromWei(b, 'ether');
+        console.log("coverted:", converted);
+
+        dispatch({
+          type: ActionType.SET_ETH_BALANCE,
+          payload: converted
+        })
+
+      }else{
+        console.error('meta mask injected provider was expected here, but not available');
+      }
     }
 
-    if (state.ethersWeb3){
-      console.log('have ethers');
-      console.log(state.ethersWeb3);    
+    if (state.selectedEthAddr){
       fetchBalance();
     }
-  }, [state.ethersWeb3]);
-  
-*/
+  }, [state.selectedEthAddr])
+
 
   return ( 
     <div className="flexRow seeMe">
@@ -73,12 +69,15 @@ export default function StatusAndButtons() {
             <div>ChainLink</div>
           </div>
           <div className="boxBody seeMe">
-            <div className="boxBodyStatus">c:</div>
+            <div className="boxBodyStatus"> 
+              <div>contract:</div>
+              <div>contract balance:</div>
+            </div>
             <div className="boxBodybuttons">
               <Button
                 type="dashed"
               >
-                Lets See
+                Fund Contract
               </Button>
             </div>
           </div>
@@ -94,7 +93,7 @@ export default function StatusAndButtons() {
           <div className="boxBody seeMe">
             <div className="boxBodyStatus">
               <div>a:{state.selectedEthAddr}</div>
-              <div>b:</div>
+              <div>b: {state.ethBalance}</div>
             </div>
             <div className="boxBodybuttons">
               <Button

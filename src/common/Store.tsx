@@ -9,7 +9,8 @@ export enum ActionType {
   SET_ETHWEB3 = "plasmalink/ETHWEB3",
   SET_INJECTED_PROVIDER = "plasmalink/SET_INJECTED_PROVIDER",
   SET_SELECTED_ETH_ADDR = "plasmalink/SET_SELECTED_ETH_ADDR",
-  SET_ETHERS_WEB3 = "plasmalink/SET_ETHERS_WEB3"
+  SET_ETH_BALANCE = "plasmalink/SET_ETH_BALANCE",
+ 
 }
 
 
@@ -17,7 +18,8 @@ const initialState: IAppState = {
   ethWeb3: null,
   injectedProvider: null,
   selectedEthAddr: '',
-  ethersWeb3: null
+  ethersWeb3: null,
+  ethBalance: '--'
 };
 
 
@@ -37,9 +39,9 @@ function reducer(state: IAppState, action: IAction | any): IAppState {
       return {
         ...state, selectedEthAddr: action.payload
       }
-    case ActionType.SET_ETHERS_WEB3:
+    case ActionType.SET_ETH_BALANCE:
       return {
-        ...state, ethersWeb3: action.payload
+        ...state, ethBalance: action.payload
       }
     default:
       return state;

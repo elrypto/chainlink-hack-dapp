@@ -13,6 +13,7 @@ export interface IAppState {
   injectedProvider: any| null;
   selectedEthAddr: string;
   ethersWeb3: any;
+  ethBalance: string;
 }
 
 export interface IAction {

@@ -61,17 +61,13 @@ export const fetchSkills = async (loomObj: ILoomObject | any, dispatch: Dispatch
 
 
 export const readChainLinkContract = async(web3: Web3, chainLinkContractAddr: string, dispatch: Dispatch) => {
-  
-/*module.exports = async callback => {
-  const mc = await MyHttpContract.deployed()
-  const data = await mc.data.call()
-  callback(data)
-}*/
-
   let clContract = await loadTokenContract(web3, ChainLinkContract, chainLinkContractAddr);
-  //console.log("contract in readchain():", c);
   let returnedData = await clContract.methods.data().call();
-  console.log('returnedData:', returnedData);
+  
+  dispatch ({
+    type: ActionType.SET_CONTRACT_SKILLS_COUNT,
+    payload: returnedData
+  })
 
 }
 

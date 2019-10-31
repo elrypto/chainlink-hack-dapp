@@ -22,6 +22,7 @@ export interface IAppState {
   chainLinkTokenAddr: string;
   userLinkBalance: string;
   contractLinkBalance: string;
+  contractSkillsCount: string;
 }
 
 export interface IAction {

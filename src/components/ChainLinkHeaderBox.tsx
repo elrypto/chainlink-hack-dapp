@@ -2,7 +2,7 @@ import React from 'react'
 import ChainLinkLogo from "./../img/chainlink.png";
 import { Button } from 'antd';
 import { Store } from '../common/Store';
-import { readChainLinkContract } from '../common/Actions';
+import { readChainLinkContract, invokeChainLinkContract } from '../common/Actions';
 
 const whiteText = {
   color: 'white'
@@ -31,8 +31,17 @@ export default function ChainLinkHeaderBox() {
         <div className="boxBodybuttons">
           <Button
             type="dashed"
+            onClick={ async() => {
+              let invokePath: string = 'https://plasmalink-api.herokuapp.com/numberOfSkills';
+              let parsePath: string = 'message';
+              let oracleAddr: string = '0x1948C20CC492539968BB9b041F96D6556B4b7001';
+              let jobId: string = '80fecd06d2e14c67a22cee5f9728e067';
+              //await invokeChainLinkContract(state.ethWeb3, invokePath, parsePath,  state.chainLinkContractAddr, dispatch);
+              await invokeChainLinkContract(state.ethWeb3, invokePath, parsePath, state.chainLinkContractAddr, 
+                                                      state.selectedEthAddr, oracleAddr, jobId, dispatch);
+            }}
           >
-            Add Value on Plasma Chain (via CL Contract)
+            Invoke CL to Read Value on Plasma Chain (via CL Contract)
           </Button>
           <Button
             type="dashed"

@@ -72,6 +72,33 @@ export const readChainLinkContract = async(web3: Web3, chainLinkContractAddr: st
 }
 
 
+export const invokeChainLinkContract = async (web3: Web3, urlToInvoke: string, responseParsePath: string,  
+                                                              chainLinkContractAddr: string, userAddress: string,
+                                                              oracleAddress: string, jobId: string,
+                                                              dispatch: Dispatch) => {
+  console.log('invokeChainLinkContract() with url:', urlToInvoke);
+  console.log('invokeChainLinkContract() with path:', responseParsePath);
+
+  let clContract = await loadTokenContract(web3, ChainLinkContract, chainLinkContractAddr);
+  
+  const tx = await clContract.methods.createRequestTo(
+          oracleAddress,
+          web3.utils.toHex(jobId),
+          ONE_AS_WEI,
+          urlToInvoke,
+          responseParsePath,
+          '100'
+      )
+      .send(
+    {
+      from: userAddress
+    }
+  )
+
+  console.log('invoke tx hash:', tx.tx);
+}
+
+
 
 export const transferOneLinkToken = async(web3: Web3, linkTokenContractAddr: string, toAddr: string, fromAddr: string) => {
   let hash = await transferToken(web3, LinkToken, linkTokenContractAddr, ONE_AS_WEI, toAddr, fromAddr);

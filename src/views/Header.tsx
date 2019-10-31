@@ -1,5 +1,9 @@
 import React from 'react';
 import { Store } from '../common/Store';
+import CLLogo from "./../img/chainlink.png";
+import LoomLogo from "./../img/loom.png";
+
+
 
 export default function Header() {
   const { state } = React.useContext(Store);
@@ -7,7 +11,7 @@ export default function Header() {
   return (
     <React.Fragment>
        <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <a className="navbar-brand" href="/"><p>o--plasma link--o</p></a>
+          <a className="navbar-brand" href="/"><p><img className="logo" src={CLLogo}/>  plasma link  <img className="logo" src={LoomLogo}/></p></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarResponsive">
               <span className="navbar-toggler-icon"></span>

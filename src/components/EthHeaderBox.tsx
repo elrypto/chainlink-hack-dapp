@@ -34,7 +34,7 @@ export default function EthHeaderBox() {
                   }
                 }
               >
-                Fund CL Contract
+                Fund ChainLink Contract With Link Tokens
               </Button>
             </div>
           </div>

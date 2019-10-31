@@ -10,8 +10,6 @@ const whiteText = {
   color: 'white'
 }
 
-/*
-*/
 
 export default function LoomHeaderBox() {
   const { state, dispatch } = React.useContext(Store);
@@ -58,7 +56,7 @@ export default function LoomHeaderBox() {
                   await addSkill(`directContractAddAt${ts}`, state.loomObj);
                 }}
               >
-                Add Value Directly Through Loom
+                Add Value Directly To Plasma (Loom Network Contract Invocation)
               </Button>
             </div>
           </div>

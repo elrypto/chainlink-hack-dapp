@@ -16,6 +16,7 @@ export interface IAppState {
   ethBalance: string;
   loomObj: ILoomObject | null;
   loomUserAddr: string;
+  loomContractAddr: string;
   skills: Array<string>;
   chainLinkContractAddr: string;
   chainLinkTokenAddr: string;

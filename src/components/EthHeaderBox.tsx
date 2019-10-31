@@ -19,6 +19,7 @@ export default function EthHeaderBox() {
             <div className="boxBodyStatus">
               <div>{state.selectedEthAddr}</div>
               <div>Eth: {state.ethBalance}</div>
+              <div>Link: {state.linkBalance}</div>
             </div>
             <div className="boxBodybuttons">
               <Button

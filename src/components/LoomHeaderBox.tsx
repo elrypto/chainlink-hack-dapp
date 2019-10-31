@@ -32,17 +32,11 @@ export default function LoomHeaderBox() {
           <div className="boxBody seeMe">
             <div className="boxBodyStatus">
               <div>
+                {state.loomContractAddr}
+              </div>
+              <div>
                 number of loom fetched values: {state.skills.length}
-              </div>
-              <div>
-                addr:
-              </div>
-              <div>
-                gateway balance:
-              </div>
-              <div>
-                data field:
-              </div>
+              </div>    
             </div>
             <div className="boxBodybuttons">
               <Button

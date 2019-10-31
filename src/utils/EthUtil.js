@@ -1,4 +1,4 @@
-import { notifyError, notify } from "../common/Actions";
+import { notifyError } from "../common/Actions";
 
 export function toEth(web3, weiVal) {
   return web3.utils.fromWei(weiVal, 'ether');
@@ -33,16 +33,4 @@ export async function transferToken(web3, contractJson, contractAddr, amount, to
     console.error(e);
     notifyError('Error during transfer:', e.message);
   }
-
-  /*
-  contract.transfer.send(
-    "0x36C90...", 
-    100 * Math.pow (10, 18),
-    {
-      from: "0xD0A88..."
-    }, 
-    function(error, txHash) {
-      console.log(txHash);
-    });*/
-
 }

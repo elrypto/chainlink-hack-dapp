@@ -24,6 +24,7 @@ const initialState: IAppState = {
   ethBalance: '--',
   loomObj: null,
   loomUserAddr: '--',
+  loomContractAddr: '0xf9385B9F7AB544038839c293b975E83C07beed17',
   skills: [],
   chainLinkContractAddr: '0x8Ba7582B2113e35AB17f52875a927e02500A0d7D',
   chainLinkTokenAddr: '0x20fe562d797a42dcb3399062ae9546cd06f63280'

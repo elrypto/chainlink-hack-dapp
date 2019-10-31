@@ -1,8 +1,11 @@
 import React from 'react'
 import ChainLinkLogo from "./../img/chainlink.png";
 import { Button } from 'antd';
+import { Store } from '../common/Store';
 
 export default function ChainLinkHeaderBox() {
+  const { state, dispatch } = React.useContext(Store);
+
   return (
     <div className="fullFlexRow">
     <div className="flexCol">
@@ -12,14 +15,19 @@ export default function ChainLinkHeaderBox() {
       </div>
       <div className="boxBody seeMe">
         <div className="boxBodyStatus"> 
-          <div>contract address:</div>
-          <div>contract balance:</div>
+          <div>{state.chainLinkContractAddr}</div>
+          <div>Link:</div>
         </div>
         <div className="boxBodybuttons">
           <Button
             type="dashed"
           >
-            Fund Contract
+            Add Value on Plasma Chain (via CL Contract)
+          </Button>
+          <Button
+            type="dashed"
+          >
+            Read Plasma Chain Value (via CL Contract)
           </Button>
         </div>
       </div>

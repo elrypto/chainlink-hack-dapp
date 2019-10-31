@@ -73,3 +73,28 @@ export const linkBalance = async (web3: Web3, linkTokenContractAddr: string, add
 }
 
 
+export const addSkill = async (skillName: string, loomObj: ILoomObject| any) => {
+  console.log("Action.addSkill()");
+
+  try {
+    const tx = await loomObj.instance.methods
+      .addSkill(skillName)
+      .send({ from: loomObj.currentUserAddress });
+
+    doNotifyTx("addSkill", tx);
+  } catch (error) {
+    doNotifyError(error);
+  }
+};
+
+
+const doNotifyError = (error: any) => {
+  console.error("Error occured submitting transaction to sideChain:", error);
+  notifyError("Error occured during transaction:" + error);
+};
+
+
+const doNotifyTx = (txName: string, txObj: any) => {
+  console.log("sChain tx submitted - " + txName + ":", txObj);
+  notify("tx submitted, hash:" + txObj.transactionHash);
+};

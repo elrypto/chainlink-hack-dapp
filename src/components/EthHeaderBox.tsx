@@ -13,7 +13,7 @@ export default function EthHeaderBox() {
         <div className="flexCol">
           <div className="boxHead flexRow">
             <div><img className="boxHeadLogo" src={EthLogo}/></div>
-            <div>Ethereum Network</div>
+            <div>Ethereum Address on Ropsten</div>
           </div>
           <div className="boxBody">
             <div className="boxBodyStatus">

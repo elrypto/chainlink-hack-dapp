@@ -11,7 +11,7 @@ export default function ChainLinkHeaderBox() {
     <div className="flexCol">
       <div className="boxHead flexRow">
         <div><img className="boxHeadLogo" src={ChainLinkLogo}/></div>
-        <div>ChainLink</div>
+        <div>ChainLink Contract on Ropsten</div>
       </div>
       <div className="boxBody">
         <div className="boxBodyStatus"> 

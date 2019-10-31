@@ -19,7 +19,11 @@ export default function ChainLinkHeaderBox() {
       </div>
       <div className="boxBody">
         <div className="boxBodyStatus"> 
-          <div>{state.chainLinkContractAddr}</div>
+          <div>  
+            <a target="_blank" href={`https://ropsten.etherscan.io/address/${state.chainLinkContractAddr}`}> 
+                  {state.chainLinkContractAddr}
+              </a>
+          </div>
           <div>Link: {state.contractLinkBalance}</div>
           <div style={whiteText}>.</div>
         </div>

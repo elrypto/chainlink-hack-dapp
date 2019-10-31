@@ -5,6 +5,8 @@ import { Button } from 'antd';
 import { transferOneLinkToken } from '../common/Actions';
 
 
+//
+
 export default function EthHeaderBox() {
   const { state } = React.useContext(Store);
 
@@ -17,7 +19,10 @@ export default function EthHeaderBox() {
           </div>
           <div className="boxBody">
             <div className="boxBodyStatus">
-              <div>{state.selectedEthAddr}</div>
+              <div>  <a target="_blank" href={`https://ropsten.etherscan.io/address/${state.selectedEthAddr}`}> 
+                  {state.selectedEthAddr}
+              </a>
+           </div>
               <div>Eth: {state.ethBalance}</div>
               <div>Link: {state.userLinkBalance}</div>
             </div>

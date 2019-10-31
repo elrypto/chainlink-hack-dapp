@@ -29,6 +29,22 @@ export default function ChainLinkHeaderBox() {
           <div>ChainLink contract count: {state.contractSkillsCount}</div>
         </div>
         <div className="boxBodybuttons">
+          
+          <Button
+            type="dashed"
+            onClick={ async() => {
+              let invokePath: string = 'https://plasmalink-api.herokuapp.com/createSkill';
+              let parsePath: string = 'message';
+              let oracleAddr: string = '0x1948C20CC492539968BB9b041F96D6556B4b7001';
+              let jobId: string = '80fecd06d2e14c67a22cee5f9728e067';
+       
+              await invokeChainLinkContract(state.ethWeb3, invokePath, parsePath, state.chainLinkContractAddr, 
+                                                      state.selectedEthAddr, oracleAddr, jobId, dispatch);
+            }}
+          >
+            Invoke ChainLink to Add A Value on Loom Plasma Chain (via CL Contract)
+          </Button>
+       
           <Button
             type="dashed"
             onClick={ async() => {
@@ -36,13 +52,14 @@ export default function ChainLinkHeaderBox() {
               let parsePath: string = 'message';
               let oracleAddr: string = '0x1948C20CC492539968BB9b041F96D6556B4b7001';
               let jobId: string = '80fecd06d2e14c67a22cee5f9728e067';
-              //await invokeChainLinkContract(state.ethWeb3, invokePath, parsePath,  state.chainLinkContractAddr, dispatch);
+       
               await invokeChainLinkContract(state.ethWeb3, invokePath, parsePath, state.chainLinkContractAddr, 
                                                       state.selectedEthAddr, oracleAddr, jobId, dispatch);
             }}
           >
-            Invoke CL to Read Value on Plasma Chain (via CL Contract)
+            Invoke ChainLink to Read Value on Loom Plasma Chain (via CL Contract)
           </Button>
+       
           <Button
             type="dashed"
             onClick={ async()=>{

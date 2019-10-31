@@ -95,7 +95,7 @@ export const invokeChainLinkContract = async (web3: Web3, urlToInvoke: string, r
     }
   )
 
-  console.log('invoke tx hash:', tx.tx);
+  console.log('invoke tx hash:', tx);
 }
 
 

@@ -3,6 +3,10 @@ import ChainLinkLogo from "./../img/chainlink.png";
 import { Button } from 'antd';
 import { Store } from '../common/Store';
 
+const whiteText = {
+  color: 'white'
+}
+
 export default function ChainLinkHeaderBox() {
   const { state, dispatch } = React.useContext(Store);
 
@@ -17,7 +21,7 @@ export default function ChainLinkHeaderBox() {
         <div className="boxBodyStatus"> 
           <div>{state.chainLinkContractAddr}</div>
           <div>Link: {state.contractLinkBalance}</div>
-          <div>.</div>
+          <div style={whiteText}>.</div>
         </div>
         <div className="boxBodybuttons">
           <Button

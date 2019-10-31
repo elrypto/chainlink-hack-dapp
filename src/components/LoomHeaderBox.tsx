@@ -5,6 +5,10 @@ import { Store } from '../common/Store';
 import { fetchSkills, addSkill } from '../common/Actions';
 
 
+const whiteText = {
+  color: 'white'
+}
+
 export default function LoomHeaderBox() {
   const { state, dispatch } = React.useContext(Store);
 
@@ -37,7 +41,7 @@ export default function LoomHeaderBox() {
               <div>
                 number of loom fetched values: {state.skills.length}
               </div>    
-              <div>.</div>
+              <div style={whiteText}>.</div>
             </div>
             <div className="boxBodybuttons">
               <Button

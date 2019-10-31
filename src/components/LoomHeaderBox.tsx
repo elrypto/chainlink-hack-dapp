@@ -29,7 +29,7 @@ export default function LoomHeaderBox() {
             <div><img className="boxHeadLogo" src={LoomLogo}/></div>
             <div>Loom Network</div>
           </div>
-          <div className="boxBody seeMe">
+          <div className="boxBody">
             <div className="boxBodyStatus">
               <div>
                 {state.loomContractAddr}
@@ -37,6 +37,7 @@ export default function LoomHeaderBox() {
               <div>
                 number of loom fetched values: {state.skills.length}
               </div>    
+              <div>.</div>
             </div>
             <div className="boxBodybuttons">
               <Button

@@ -15,11 +15,11 @@ export default function EthHeaderBox() {
             <div><img className="boxHeadLogo" src={EthLogo}/></div>
             <div>Ethereum Network</div>
           </div>
-          <div className="boxBody seeMe">
+          <div className="boxBody">
             <div className="boxBodyStatus">
               <div>{state.selectedEthAddr}</div>
               <div>Eth: {state.ethBalance}</div>
-              <div>Link: {state.linkBalance}</div>
+              <div>Link: {state.userLinkBalance}</div>
             </div>
             <div className="boxBodybuttons">
               <Button

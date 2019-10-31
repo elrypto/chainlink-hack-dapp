@@ -13,10 +13,11 @@ export default function ChainLinkHeaderBox() {
         <div><img className="boxHeadLogo" src={ChainLinkLogo}/></div>
         <div>ChainLink</div>
       </div>
-      <div className="boxBody seeMe">
+      <div className="boxBody">
         <div className="boxBodyStatus"> 
           <div>{state.chainLinkContractAddr}</div>
-          <div>Link:</div>
+          <div>Link: {state.contractLinkBalance}</div>
+          <div>.</div>
         </div>
         <div className="boxBodybuttons">
           <Button

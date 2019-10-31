@@ -13,6 +13,8 @@ export enum ActionType {
   SET_LOOM_OBJ = "plasmalink/SET_LOOM_OBJ",
   SET_LOOM_USER_ADDR = "plasmalink/SET_LOOM_USER_ADDR",
   SET_SKILLS_LIST = "plasmalink/SKILLS_LIST",
+  SET_USER_LINK_BALANCE = "plasmalink/SET_USER_LINK_BALANCE",
+  SET_CONTRACT_LINK_BALANCE = "plasmalink/SET_CONTRACT_LINK_BALANCE"
 }
 
 
@@ -27,7 +29,9 @@ const initialState: IAppState = {
   loomContractAddr: '0xf9385B9F7AB544038839c293b975E83C07beed17',
   skills: [],
   chainLinkContractAddr: '0x8Ba7582B2113e35AB17f52875a927e02500A0d7D',
-  chainLinkTokenAddr: '0x20fe562d797a42dcb3399062ae9546cd06f63280'
+  chainLinkTokenAddr: '0x20fe562d797a42dcb3399062ae9546cd06f63280',
+  userLinkBalance: '--',
+  contractLinkBalance: '--'
 };
 
 
@@ -62,6 +66,14 @@ function reducer(state: IAppState, action: IAction | any): IAppState {
     case ActionType.SET_SKILLS_LIST:
       return {
         ...state, skills: action.payload
+      }
+    case ActionType.SET_USER_LINK_BALANCE:
+      return {
+        ...state, userLinkBalance: action.payload
+      }
+    case ActionType.SET_CONTRACT_LINK_BALANCE:
+      return {
+        ...state, contractLinkBalance: action.payload
       }
     default:
       return state;

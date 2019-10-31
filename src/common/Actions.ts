@@ -5,7 +5,7 @@ import Axios from "axios";
 import { Dispatch, ILoomObject} from './Interfaces';
 import Web3 from "web3";
 import LinkToken from '../contracts/LinkToken.json';
-import { transferToken } from "../utils/EthUtil";
+import { transferToken, loadTokenContract } from "../utils/EthUtil";
 
 
 
@@ -61,10 +61,15 @@ export const fetchSkills = async (loomObj: ILoomObject | any, dispatch: Dispatch
 
 export const transferOneLinkToken = async(web3: Web3, linkTokenContractAddr: string, toAddr: string, fromAddr: string) => {
   let hash = await transferToken(web3, LinkToken, linkTokenContractAddr, ONE_AS_WEI, toAddr, fromAddr);
-  console.log(hash);
-  notify('transfer successful in block: '+ hash.blockNumber);
-  //dispatch lastEthHash
+  console.log('chainlink token transfer:', hash);
+  notify('chainlink transfer successful in block: '+ hash.blockNumber);
 }
 
+
+export const linkBalance = async (web3: Web3, linkTokenContractAddr: string, addr: string) => {
+  let c = loadTokenContract(web3, LinkToken, linkTokenContractAddr);
+  let bal = await c.methods.balanceOf(addr).call();
+  return web3.utils.fromWei(bal, 'ether')
+}
 
 

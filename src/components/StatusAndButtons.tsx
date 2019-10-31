@@ -5,6 +5,8 @@ import EthHeaderBox from './EthHeaderBox';
 import LoomHeaderBox from './LoomHeaderBox';
 import useLoadInjectedWeb3State from './hooks/useLoadInjectedWeb3State';
 import useLoadLoomIntoState from './hooks/useLoadLoomIntoState';
+import { linkBalance } from '../common/Actions';
+import { IAppState } from '../common/Interfaces';
 
 
 
@@ -13,9 +15,34 @@ export default function StatusAndButtons() {
   useLoadInjectedWeb3State();
   useLoadLoomIntoState();
 
+
+  /* load chain link balances */
+  React.useEffect(() => {
+    const fetchChainLinkBalances = async() => {
+      let b1 = await linkBalance(state.ethWeb3, state.chainLinkTokenAddr, state.selectedEthAddr);
+
+      let b2 = await linkBalance(state.ethWeb3, state.chainLinkTokenAddr, state.chainLinkContractAddr);
+
+      dispatch({
+        type: ActionType.SET_USER_LINK_BALANCE,
+        payload: b1
+      });
+
+      dispatch({
+        type: ActionType.SET_CONTRACT_LINK_BALANCE,
+        payload: b2
+      });
+
+    }
+    if (state.ethWeb3){
+      fetchChainLinkBalances();
+    }
+
+  }, [state.ethWeb3]);
+
   
   return ( 
-    <div className="flexRow seeMe">
+    <div className="flexRow">
    
       <ChainLinkHeaderBox />
         

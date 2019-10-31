@@ -20,6 +20,8 @@ export interface IAppState {
   skills: Array<string>;
   chainLinkContractAddr: string;
   chainLinkTokenAddr: string;
+  userLinkBalance: string;
+  contractLinkBalance: string;
 }
 
 export interface IAction {

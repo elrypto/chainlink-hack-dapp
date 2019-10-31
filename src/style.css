@@ -17,13 +17,13 @@ body{
 }
 
 .boxBodybuttons {
-  border-top: 1px solid lightgray;
   padding: 1em
 }
 
 .boxBodyStatus {
   background-color: white;
   padding: 1em;
+  border: 1px solid lightgray;
 }
 
 .boxBody {

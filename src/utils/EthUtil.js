@@ -9,6 +9,11 @@ export function toWei(web3, ethVal) {
 }
 
 
+export function loadTokenContract(web3, contractJson, contractAddr){
+  return new web3.eth.Contract(contractJson.abi, contractAddr);
+}
+
+
 export async function transferToken(web3, contractJson, contractAddr, amount, toAddr, fromAddr){
   console.log('in transferToken() web3:', web3);
   console.log('in transferToken() contractJson:', contractJson);
@@ -18,7 +23,8 @@ export async function transferToken(web3, contractJson, contractAddr, amount, to
   console.log('in transferToken() fromAddr:', fromAddr);
 
 
-  let contract =  new web3.eth.Contract(contractJson.abi, contractAddr); 
+  /* workaround for typescript issue with json abi of contract */
+  let contract =  loadTokenContract(web3, contractJson, contractAddr);
   console.log("have contract:", contract);
 
   try{

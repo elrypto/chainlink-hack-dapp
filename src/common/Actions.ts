@@ -5,6 +5,7 @@ import Axios from "axios";
 import { Dispatch, ILoomObject} from './Interfaces';
 import Web3 from "web3";
 import LinkToken from '../contracts/LinkToken.json';
+import ChainLinkContract from '../contracts/MyHTTPContract.json'
 import { transferToken, loadTokenContract } from "../utils/EthUtil";
 
 
@@ -57,6 +58,23 @@ export const fetchSkills = async (loomObj: ILoomObject | any, dispatch: Dispatch
 
   return skills;
 };
+
+
+export const readChainLinkContract = async(web3: Web3, chainLinkContractAddr: string, dispatch: Dispatch) => {
+  
+/*module.exports = async callback => {
+  const mc = await MyHttpContract.deployed()
+  const data = await mc.data.call()
+  callback(data)
+}*/
+
+  let clContract = await loadTokenContract(web3, ChainLinkContract, chainLinkContractAddr);
+  //console.log("contract in readchain():", c);
+  let returnedData = await clContract.methods.data().call();
+  console.log('returnedData:', returnedData);
+
+}
+
 
 
 export const transferOneLinkToken = async(web3: Web3, linkTokenContractAddr: string, toAddr: string, fromAddr: string) => {

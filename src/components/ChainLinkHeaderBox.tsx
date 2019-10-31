@@ -2,6 +2,7 @@ import React from 'react'
 import ChainLinkLogo from "./../img/chainlink.png";
 import { Button } from 'antd';
 import { Store } from '../common/Store';
+import { readChainLinkContract } from '../common/Actions';
 
 const whiteText = {
   color: 'white'
@@ -25,7 +26,7 @@ export default function ChainLinkHeaderBox() {
               </a>
           </div>
           <div>Link: {state.contractLinkBalance}</div>
-          <div style={whiteText}>.</div>
+          <div>ChainLink contract count: {state.contractSkillsCount}</div>
         </div>
         <div className="boxBodybuttons">
           <Button
@@ -35,6 +36,9 @@ export default function ChainLinkHeaderBox() {
           </Button>
           <Button
             type="dashed"
+            onClick={ async()=>{
+              await readChainLinkContract(state.ethWeb3, state.chainLinkContractAddr, dispatch);
+            }}
           >
             Read Plasma Chain Value (via CL Contract)
           </Button>

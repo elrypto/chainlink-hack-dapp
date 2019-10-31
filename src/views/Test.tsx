@@ -1,6 +1,6 @@
 import React from 'react'
 import StatusAndButtons from '../components/StatusAndButtons'
-import useInjectedWeb3 from '../components/chainstate/useInjectedWeb3';
+import useInjectedWeb3 from '../components/hooks/useInjectedWeb3';
 
 
 export default function Test() {

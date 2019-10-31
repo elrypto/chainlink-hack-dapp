@@ -1,7 +1,7 @@
 import React from "react";
 import { CryptoUtils, Client, LoomProvider, LocalAddress } from "loom-js";
 import Web3 from "web3";
-import EsembleContractJson from "../../contracts/EsembleApp.json";
+import UpikoContractJson from "../../contracts/UpikoApp.json";
 
 /* based on loom truffle example, contract.js file, adapted to react hooks
    https://github.com/loomnetwork/truffle-dappchain-example/blob/master/src/contract.js
@@ -15,7 +15,8 @@ export const DEFAULT_LOCAL_DEV = {
   networkId: "default"
 };
 
-export const DEFAULT_CONTRACT = EsembleContractJson;
+export const DEFAULT_CONTRACT = UpikoContractJson;
+
 
 export default function useLoom(contractJson, connectionInfo) {
   const [loomObj, setLoomObj] = React.useState(null);

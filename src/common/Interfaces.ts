@@ -14,6 +14,9 @@ export interface IAppState {
   selectedEthAddr: string;
   ethersWeb3: any;
   ethBalance: string;
+  loomObj: ILoomObject | null;
+  loomUserAddr: string;
+  skills: Array<string>;
 }
 
 export interface IAction {

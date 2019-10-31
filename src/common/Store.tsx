@@ -10,16 +10,21 @@ export enum ActionType {
   SET_INJECTED_PROVIDER = "plasmalink/SET_INJECTED_PROVIDER",
   SET_SELECTED_ETH_ADDR = "plasmalink/SET_SELECTED_ETH_ADDR",
   SET_ETH_BALANCE = "plasmalink/SET_ETH_BALANCE",
- 
+  SET_LOOM_OBJ = "plasmalink/SET_LOOM_OBJ",
+  SET_LOOM_USER_ADDR = "plasmalink/SET_LOOM_USER_ADDR",
+  SET_SKILLS_LIST = "plasmalink/SKILLS_LIST",
 }
 
 
 const initialState: IAppState = {
   ethWeb3: null,
   injectedProvider: null,
-  selectedEthAddr: '',
+  selectedEthAddr: '--',
   ethersWeb3: null,
-  ethBalance: '--'
+  ethBalance: '--',
+  loomObj: null,
+  loomUserAddr: '--',
+  skills: []
 };
 
 
@@ -42,6 +47,18 @@ function reducer(state: IAppState, action: IAction | any): IAppState {
     case ActionType.SET_ETH_BALANCE:
       return {
         ...state, ethBalance: action.payload
+      }
+    case ActionType.SET_LOOM_OBJ:
+      return {
+        ...state, loomObj: action.payload
+      }
+    case ActionType.SET_LOOM_USER_ADDR:
+      return {
+        ...state, loomUserAddr: action.payload
+      }
+    case ActionType.SET_SKILLS_LIST:
+      return {
+        ...state, skills: action.payload
       }
     default:
       return state;

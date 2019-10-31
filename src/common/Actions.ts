@@ -2,7 +2,7 @@ import _ from "lodash";
 import { toast } from "react-toastify";
 import { ActionType, Store } from "./Store";
 import Axios from "axios";
-import { Dispatch} from './Interfaces';
+import { Dispatch, ILoomObject} from './Interfaces';
 
 
 
@@ -34,4 +34,21 @@ export const rpcStatus = async():Promise<boolean> => {
     return false;
   }
 }
+
+
+export const fetchSkills = async (loomObj: ILoomObject | any, dispatch: Dispatch) => {
+  let skillsCount = await loomObj.instance.methods.numberOfSkills().call();
+  let skills = [];
+
+  for (let i = 0; i < skillsCount; i++) {
+    let nextSkill = await loomObj.instance.methods.skillsList(i).call();
+    skills.push(nextSkill);
+  }
+  dispatch({
+    type: ActionType.SET_SKILLS_LIST,
+    payload: skills
+  });
+
+  return skills;
+};
 

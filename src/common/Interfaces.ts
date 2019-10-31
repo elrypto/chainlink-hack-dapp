@@ -17,6 +17,8 @@ export interface IAppState {
   loomObj: ILoomObject | null;
   loomUserAddr: string;
   skills: Array<string>;
+  chainLinkContractAddr: string;
+  chainLinkTokenAddr: string;
 }
 
 export interface IAction {

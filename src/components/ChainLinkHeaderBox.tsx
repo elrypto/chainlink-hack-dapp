@@ -12,7 +12,7 @@ export default function ChainLinkHeaderBox() {
       </div>
       <div className="boxBody seeMe">
         <div className="boxBodyStatus"> 
-          <div>contract:</div>
+          <div>contract address:</div>
           <div>contract balance:</div>
         </div>
         <div className="boxBodybuttons">

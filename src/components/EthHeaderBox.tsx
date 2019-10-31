@@ -2,6 +2,7 @@ import React from 'react'
 import EthLogo from "./../img/ethereum.png";
 import { Store } from '../common/Store';
 import { Button } from 'antd';
+import { transferOneLinkToken } from '../common/Actions';
 
 
 export default function EthHeaderBox() {
@@ -22,8 +23,12 @@ export default function EthHeaderBox() {
             <div className="boxBodybuttons">
               <Button
                 type="dashed"
+                onClick={ async()=>{
+                    await transferOneLinkToken(state.ethWeb3, state.chainLinkTokenAddr, state.chainLinkContractAddr, state.selectedEthAddr);
+                  }
+                }
               >
-                Lets See
+                Fund CL Contract
               </Button>
             </div>
           </div>

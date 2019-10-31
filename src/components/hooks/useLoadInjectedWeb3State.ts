@@ -35,6 +35,11 @@ export default function useLoadInjectedWeb3State() {
         console.log("coverted:", converted);
 
         dispatch({
+          type: ActionType.SET_ETHWEB3,
+          payload: w3
+        })
+
+        dispatch({
           type: ActionType.SET_ETH_BALANCE,
           payload: converted
         })

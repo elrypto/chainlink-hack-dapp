@@ -3,7 +3,13 @@ import { toast } from "react-toastify";
 import { ActionType, Store } from "./Store";
 import Axios from "axios";
 import { Dispatch, ILoomObject} from './Interfaces';
+import Web3 from "web3";
+import LinkToken from '../contracts/LinkToken.json';
+import { transferToken } from "../utils/EthUtil";
 
+
+
+const ONE_AS_WEI = '1000000000000000000';
 
 
 export const notify = (msg: string, success?: boolean) => {
@@ -51,4 +57,14 @@ export const fetchSkills = async (loomObj: ILoomObject | any, dispatch: Dispatch
 
   return skills;
 };
+
+
+export const transferOneLinkToken = async(web3: Web3, linkTokenContractAddr: string, toAddr: string, fromAddr: string) => {
+  let hash = await transferToken(web3, LinkToken, linkTokenContractAddr, ONE_AS_WEI, toAddr, fromAddr);
+  console.log(hash);
+  notify('transfer successful in block: '+ hash.blockNumber);
+  //dispatch lastEthHash
+}
+
+
 

@@ -16,7 +16,7 @@ export default function Header() {
               <ul className="navbar-nav ml-auto">
              
                 <li className="nav-item">
-                  <a className="nav-link" href="/test">demo</a>
+                  <a className="nav-link" href="/demo">demo</a>
                 </li>
               
               </ul>

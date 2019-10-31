@@ -10,7 +10,7 @@ export default function Footer() {
                   <h3>plasmalink</h3>
                   <p>chainlink hack (oct 2019)</p>
                   <p>Using chainlink to provide unified access to plasma chain(s)</p>
-                  <a href="http://github.com/lrypto/" target="_blank"><i className="fab fa-github"></i></a>     
+                  <a href="http://github.com/lrypto/chainlink-hack-dapp" target="_blank"><i className="fab fa-github"></i></a>     
                 </div>
 
              </div>

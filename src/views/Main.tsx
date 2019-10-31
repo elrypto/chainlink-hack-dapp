@@ -19,9 +19,9 @@ export default function Main() {
       </div>
       <div className="caption text-center">
         <h1>plasmalink</h1>
-        <h3>chainlink hack - unified access to plasma chains</h3>
-        <a className="btn btn-outline-light btn-lg" href="#overview">Demo</a>
-        <a className="btn btn-outline-light btn-lg" href="#overview">Operations</a>
+        <h3>chainlink hack 2019 - unified access to plasma chains</h3>
+        <a className="btn btn-outline-light btn-lg" href="/demo">Demo</a>
+        <a className="btn btn-outline-light btn-lg" href="#overview">Overview of Approach</a>
       </div>
       <span><a href="" 
         onClick={() => {

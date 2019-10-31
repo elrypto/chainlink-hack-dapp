@@ -20,7 +20,7 @@ ReactDOM.render(
       <Router>
         <App path="/">        
             <RouterPage pageComponent={<Main />} path="/" />
-            <RouterPage pageComponent={<Test />} path="/test" />  
+            <RouterPage pageComponent={<Test />} path="/demo" />  
         </App>
       </Router>
   </StoreProvider>,

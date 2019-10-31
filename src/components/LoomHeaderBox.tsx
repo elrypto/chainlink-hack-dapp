@@ -3,11 +3,15 @@ import LoomLogo from "./../img/loom.png";
 import { Button } from 'antd';
 import { Store } from '../common/Store';
 import { fetchSkills, addSkill } from '../common/Actions';
+import { Link } from '@reach/router';
 
 
 const whiteText = {
   color: 'white'
 }
+
+/*
+*/
 
 export default function LoomHeaderBox() {
   const { state, dispatch } = React.useContext(Store);
@@ -36,7 +40,9 @@ export default function LoomHeaderBox() {
           <div className="boxBody">
             <div className="boxBodyStatus">
               <div>
-                {state.loomContractAddr}
+              <a target="_blank" href={`http://extdev-blockexplorer.dappchains.com/address/${state.loomContractAddr}/transactions`}> 
+                  {state.loomContractAddr}
+              </a>
               </div>
               <div>
                 number of loom fetched values: {state.skills.length}

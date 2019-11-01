@@ -25,6 +25,12 @@ export default function ChainLinkHeaderBox() {
                   {state.chainLinkContractAddr}
               </a>
           </div>
+          <div>  
+            <a target="_blank" href={`https://ropsten.explorer.chain.link/job-runs?search=80fecd06d2e14c67a22cee5f9728e067`}> 
+              ChainLink explorer for job runs (Ropsten)  
+            </a>
+          </div>
+          
           <div>Link: {state.contractLinkBalance}</div>
           <div>ChainLink contract count: {state.contractSkillsCount}</div>
         </div>

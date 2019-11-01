@@ -23,14 +23,14 @@ export default function Main() {
         <h3>ChainLink Hack 2019</h3>
         <h4 className="lastMainText">Unified Mainnet access to plasma chains through ChainLink Oracles</h4>
         <a className="btn btn-outline-light btn-lg" href="/demo">Go To Live Demo</a>
-        <a className="btn btn-outline-light btn-lg" href="www.youtube.com">Demo Video</a>
+        <a className="btn btn-outline-light btn-lg" target= "_blank" href="https://youtu.be/kX5lfAVR22I">Demo Video</a>
         <a className="btn btn-outline-light btn-lg" href="#overview">Overview of Approach</a>
       </div>
       <span><a href="" 
         onClick={() => {
-          window.open("https://unsplash.com/photos/46dgbaKZTjk");
+          window.open("https://unsplash.com/@korpa");
         }}
-      >Photo credit: Axi Aimee</a></span>
+      >Photo credit: korpa</a></span>
       <div id="overview" className="offset">
         <div className="col-12 narrow text-center">
           <h1>plasmaLink</h1>
@@ -45,6 +45,9 @@ export default function Main() {
           <Button
             className="videoButton"
             type="dashed"
+            onClick={ ()=> {
+              window.open('https://youtu.be/kX5lfAVR22I');
+            }}
           >
             See Demo Video
           </Button> 

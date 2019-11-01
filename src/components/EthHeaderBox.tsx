@@ -5,7 +5,11 @@ import { Button } from 'antd';
 import { transferOneLinkToken } from '../common/Actions';
 
 
-//
+
+const whiteText = {
+  color: 'white'
+}
+
 
 export default function EthHeaderBox() {
   const { state } = React.useContext(Store);
@@ -23,8 +27,12 @@ export default function EthHeaderBox() {
                   {state.selectedEthAddr}
               </a>
            </div>
-              <div>Eth: {state.ethBalance}</div>
+              <div className="flexRow">
+                <div>Eth:</div>
+                <div>{state.ethBalance}</div>
+              </div>
               <div>Link: {state.userLinkBalance}</div>
+              <div style={whiteText}>.</div>
             </div>
             <div className="boxBodybuttons">
               <Button

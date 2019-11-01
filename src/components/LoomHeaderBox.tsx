@@ -42,10 +42,12 @@ export default function LoomHeaderBox() {
                   {state.loomContractAddr}
               </a>
               </div>
+              <div style={whiteText}>.</div>
+              <div style={whiteText}>.</div>
               <div>
                 number of loom fetched values: {state.skills.length}
               </div>    
-              <div style={whiteText}>.</div>
+              
             </div>
             <div className="boxBodybuttons">
               <Button

@@ -44,9 +44,9 @@ export default function StatusAndButtons() {
   return ( 
     <div className="flexRow">
    
-      <ChainLinkHeaderBox />
-        
       <EthHeaderBox />     
+
+      <ChainLinkHeaderBox />
 
       <LoomHeaderBox />
            

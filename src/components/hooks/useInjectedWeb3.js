@@ -35,7 +35,7 @@ export default function useInjectedWeb3() {
             console.log('selectedAddress:', provider.selectedAddress);
             console.log('is metamask:', provider.isMetaMask);
              
-            console.log('legacyprovider:', window.web3.currentProvider);
+            //console.log('legacyprovider:', window.web3.currentProvider);
 
             dispatch({
                 type: ActionType.SET_INJECTED_PROVIDER,

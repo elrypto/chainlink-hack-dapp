@@ -11,7 +11,7 @@ const whiteText = {
 }
 
 
-export default function EthHeaderBox() {
+export default function EthHeaderBox2() {
   const { state } = React.useContext(Store);
 
   return (
@@ -23,11 +23,16 @@ export default function EthHeaderBox() {
           </div>
           <div className="boxBody">
             <div className="boxBodyStatus">
-              <div>  <a target="_blank" href={`https://ropsten.etherscan.io/address/${state.selectedEthAddr}`}> 
-                  {state.selectedEthAddr}
-              </a>
+            <div className="blockRowContainer">
+              <div className="allBlocksCol1 allBlocksRowText">
+                <div>  <a target="_blank" href={`https://ropsten.etherscan.io/address/${state.selectedEthAddr}`}> 
+                    {state.selectedEthAddr}
+                </a>
+              </div>
+            </div>
+
            </div>
-              <div className="flexRow">
+             <div className="blockRowContainer">
                 <div className="allBlocksCol1 allBlocksRowText">
                   <div>Eth:</div>
                 </div>
@@ -35,8 +40,20 @@ export default function EthHeaderBox() {
                   <div>{state.ethBalance}</div>
                 </div>
               </div>
-              <div>Link: {state.userLinkBalance}</div>
-              <div style={whiteText}>.</div>
+              
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  <div>Link:</div>
+                </div>
+                 <div className="allBlocksCol1 allBlocksRowText">
+                  {state.userLinkBalance}
+                </div>
+              </div>
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  <div style={whiteText}>.</div>
+               </div>  
+              </div>
             </div>
             <div className="boxBodybuttons">
               <Button

@@ -6,7 +6,8 @@ import LoomHeaderBox from './LoomHeaderBox';
 import useLoadInjectedWeb3State from './hooks/useLoadInjectedWeb3State';
 import useLoadLoomIntoState from './hooks/useLoadLoomIntoState';
 import { linkBalance } from '../common/Actions';
-import { IAppState } from '../common/Interfaces';
+import EthHeaderBox2 from './EthHeaderBox2';
+import ChainLinkHeaderBox2 from './ChainLinkHeaderBox2';
 
 
 
@@ -44,9 +45,9 @@ export default function StatusAndButtons() {
   return ( 
     <div className="flexRow">
    
-      <EthHeaderBox />     
+      <EthHeaderBox2 />     
 
-      <ChainLinkHeaderBox />
+      <ChainLinkHeaderBox2 />
 
       <LoomHeaderBox />
            

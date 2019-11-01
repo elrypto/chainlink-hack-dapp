@@ -6,6 +6,22 @@ body{
   color: #505962;
 }
 
+.allBlocksCol1 {
+  flex:1
+}
+
+
+.allBlocksRowText {
+  font-size: 90%;
+}
+
+.blockRowContainer {
+  padding: .75em;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  border-bottom: 1px solid rgb(221, 236, 227);
+}
 
 .videoButton{
   margin-top: 1em;

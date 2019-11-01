@@ -37,18 +37,37 @@ export default function LoomHeaderBox() {
           </div>
           <div className="boxBody">
             <div className="boxBodyStatus">
-              <div>
-              <a target="_blank" href={`http://extdev-blockexplorer.dappchains.com/address/${state.loomContractAddr}/transactions`}> 
-                  {state.loomContractAddr}
-              </a>
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  <div>
+                  <a target="_blank" href={`http://extdev-blockexplorer.dappchains.com/address/${state.loomContractAddr}/transactions`}> 
+                      {state.loomContractAddr}
+                  </a>
+                  </div>
+                </div>
               </div>
-              <div style={whiteText}>.</div>
-              <div style={whiteText}>.</div>
-              <div>
-                number of loom fetched values: {state.skills.length}
-              </div>    
-              
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  <div style={whiteText}>.</div>
+               </div>  
+              </div>
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  <div style={whiteText}>.</div>
+               </div>  
+              </div>
+          
+              <div className="blockRowContainer">
+                <div className="allBlocksCol1 allBlocksRowText">
+                  Loom contract count: 
+               </div>  
+               <div className="allBlocksCol1 allBlocksRowText">
+                {state.skills.length}
+              </div>
             </div>
+
+          </div>
+            
             <div className="boxBodybuttons">
               <Button
                 type="dashed"

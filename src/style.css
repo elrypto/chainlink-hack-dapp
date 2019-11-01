@@ -6,6 +6,13 @@ body{
   color: #505962;
 }
 
+
+.videoButton{
+  margin-top: 1em;
+  font-size: 130%;
+  background-color: rgb(213, 242, 255);
+}
+
 .antDDefault {
   background: #ECECEC;
   padding: 30px;
@@ -92,6 +99,10 @@ body{
   background-image: url(img/bg.jpg);
 }
 
+.lastMainText{
+  margin-bottom: 2em;
+}
+
 .caption {
   width: 100%;
   max-width: 100%;
@@ -141,13 +152,13 @@ body{
   padding: .6rem 1.2rem;
   margin: 1rem;
   color: white;
-  background-color: #aa5a4c;
-  border-color: #aa5a4c;
+  background-color: #283b8f;
+  border-color: #182870;
 }
 
 .btn-secondary:hover{
-  background-color: #ac4735;
-  border-color: #b7513f;
+  background-color: #08496e;
+  border-color: #2262c9;
 }
 
 .jumbotron {
